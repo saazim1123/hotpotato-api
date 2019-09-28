@@ -6,9 +6,9 @@ Rails.application.routes.draw do
       resources :users do
         resources :questions, except: [:edit]
     end
-    # post '/auth', to: 'auth#create'
+    post '/auth', to: 'auth#create'
     get '/ranked_users', to: 'users#ranked_users'
-    # get '/current_user', to: 'auth#show'
+    get '/current_user', to: 'auth#show'
 
     end
   end
