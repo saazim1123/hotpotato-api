@@ -11,14 +11,14 @@ class Api::V1::AuthController < ApplicationController
 
 
     def show
-
-    token = request.headers['Authorization']
-    user = User.find_by(id: token)
-     if user
-      render json: user
-     else
-      render({json: {error: 'Invalid token'}, status: 401})
-     end
+        # byebug
+    # token = request.headers['Authorization']
+    # user = User.find_by(id: token)
+    #  if user
+    #   render json: user
+    #  else
+    #   render({json: {error: 'Invalid token'}, status: 401})
+    #  end
 
     end
 

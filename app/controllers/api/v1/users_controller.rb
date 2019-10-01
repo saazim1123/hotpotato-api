@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
-    before_action :set_user, only: [show:, update:, destroy:]
+    before_action :set_user, only: [:show, :update, :destroy]
 
     def index
         @users = User.all 
@@ -19,6 +19,7 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        byebug
         if @user.valid?
             @user.save
             render json: @user
