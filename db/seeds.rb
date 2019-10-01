@@ -115,7 +115,12 @@ user_list = [
       first_choice: "The Rock",
       second_choice: "Man Kind",
       third_choice: "Triple HHH",
-      correct_answer: "Triple HHH" }
+      correct_answer: "Triple HHH" },
+      {text:"Which Spiderman Actor has raked in the most money playing the web slinger?",
+        first_choice: "Tobey Maguire",
+        second_choice: "Tom Holland",
+        third_choice: "Andrew Garfield",
+        correct_answer: "Tom Holland" }
   ]
   
   user_list.each do |u|
