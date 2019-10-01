@@ -12,14 +12,15 @@ class Api::V1::UsersController < ApplicationController
         render json: @users
     end
 
-    def show
+    def show  
         @user = User.find(params[:id])
-        render json: @user
+        render ({json: { user: UserSerializer.new(user) }})
     end
+
 
     def create
         @user = User.new(user_params)
-        byebug
+        
         if @user.valid?
             @user.save
             render json: @user
