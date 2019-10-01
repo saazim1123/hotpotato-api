@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :questions, only: [:index, :show]
-      resources :users do
+      resources :users, only: [:index, :create, :show] do
         resources :questions, except: [:edit]
     end
-    post '/auth', to: 'auth#create'
+  
+    post '/login', to: 'auth#create'
+    get '/validate', to: 'auth#validate_token'
     get '/ranked_users', to: 'users#ranked_users'
     get '/current_user', to: 'auth#show'
+
 
     end
   end
