@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_list = [
-    {username: "test", first_name: "Test", last_name: "Test", email: "test@test.com", password: "123"}
+    {username: "test", first_name: "Test", last_name: "Test", email: "test@test.com", password: "123"},
+    {username: "johnie", first_name: "john", last_name: "smith", email: "john@test.com", password: "123"},
+    {username: "tmnt", first_name: "leonardo", last_name: "turtle", email: "leo@test.com", password: "123"},
+    {username: "jackieboi", first_name: "jack", last_name: "henley", email: "jackie@test.com", password: "123"}
   ]
   
   question_list =[
@@ -131,4 +134,8 @@ user_list = [
     question = User.first.questions.build(q)
     question.save
   end
-  
+
+  User.all.each do |user| 
+    user.highest_streak = rand(1...6)
+    user.save
+  end
