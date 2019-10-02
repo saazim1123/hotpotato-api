@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def ranked_users
-        @users = User.user_sort_by_high_streak.reverse!
+        @users = User.user_sort_by_high_streak
         
         render json: @users
     end

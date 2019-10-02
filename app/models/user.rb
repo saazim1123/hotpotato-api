@@ -15,6 +15,6 @@ class User < ApplicationRecord
     end
 
     def self.user_sort_by_high_streak
-        self.all.sort_by{|user| user.highest_streak}
+        self.all.sort_by{|user| user.highest_streak}.reverse!
     end
 end
